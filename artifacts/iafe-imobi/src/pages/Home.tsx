@@ -15,9 +15,9 @@ import { useToast } from "@/hooks/use-toast";
 import homemImg from "@assets/imagem-2-site-IMOBI_1781273319450.png";
 import chatImg from "@assets/imagem-3-site-IMOBI_1781273352262.png";
 import beneficiosImg from "@assets/imagem-5-site-IMOBIV1_1781273933278.png";
-import aiRobotImg from "@/assets/ai-robot.png";
-import funnelImg from "@/assets/funnel.png";
-import globeImg from "@/assets/globe.png";
+import aiRobotImg from "@assets/imagem-8-site-IMOBIV2_1781274455835.png";
+import funnelImg from "@assets/imagem-9-site-IMOBIV2_1781274490524.png";
+import globeImg from "@assets/imagem-10-site-IMOBIV2_1781274498262.png";
 import agentImg from "@/assets/agent.png";
 
 export default function Home() {
