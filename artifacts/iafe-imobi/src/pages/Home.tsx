@@ -57,7 +57,7 @@ export default function Home() {
       </header>
 
       {/* 2. HERO SECTION */}
-      <section className="pt-24 pb-20 px-6 max-w-5xl mx-auto text-center">
+      <section className="pt-16 pb-0 px-6 max-w-5xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -77,7 +77,7 @@ export default function Home() {
         </motion.div>
 
         <motion.div 
-          className="mt-20 mx-auto"
+          className="mt-10 mx-auto"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
@@ -99,8 +99,8 @@ export default function Home() {
       </section>
 
       {/* 4. FEATURE HIGHLIGHT SECTION */}
-      <section id="solucoes" className="py-24 px-6 max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+      <section id="solucoes" className="py-12 px-6 max-w-6xl mx-auto">
+        <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#22C55E] mb-4">
             CRM, sites e gestão conectados em uma única plataforma.
           </h2>
@@ -141,9 +141,9 @@ export default function Home() {
       </section>
 
       {/* 5. PROBLEM/SOLUTION */}
-      <section className="bg-gray-50 py-24">
+      <section className="bg-gray-50 py-14">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-10">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -192,7 +192,7 @@ export default function Home() {
       </section>
 
       {/* 6. FEATURES HEADING */}
-      <section className="py-16 text-center px-6">
+      <section className="py-10 text-center px-6">
         <motion.h2 
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -204,7 +204,7 @@ export default function Home() {
       </section>
 
       {/* 7. THREE FEATURE CARDS */}
-      <section className="max-w-6xl mx-auto px-6 pb-16">
+      <section className="max-w-6xl mx-auto px-6 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -286,7 +286,7 @@ export default function Home() {
       </section>
 
       {/* 9. STATS BANNER */}
-      <section className="py-20 px-6 max-w-6xl mx-auto">
+      <section className="py-14 px-6 max-w-6xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -313,9 +313,9 @@ export default function Home() {
       </section>
 
       {/* 10. PRICING SECTION */}
-      <section id="planos" className="py-24 px-6 bg-gray-50">
+      <section id="planos" className="py-16 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 flex flex-col items-center">
+          <div className="text-center mb-10 flex flex-col items-center">
             <h2 className="text-4xl font-extrabold text-gray-900 mb-4">Planos</h2>
             <div className="w-16 h-1.5 bg-[#22C55E] rounded-full"></div>
           </div>
@@ -395,9 +395,9 @@ export default function Home() {
       </section>
 
       {/* 11. TESTIMONIALS */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-16 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-16">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-10">
             Por que empresas de sucesso escolhem a IAFÉ IMOBI
           </h2>
           
@@ -419,18 +419,18 @@ export default function Home() {
       </section>
 
       {/* 12. FAQ SECTION */}
-      <section className="py-24 px-6 bg-gradient-to-br from-green-400 to-green-600">
+      <section className="py-16 px-6 bg-gradient-to-br from-green-400 to-green-600 overflow-hidden">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center mb-10">
             Perguntas frequentes
           </h2>
           
-          <div className="flex flex-col md:flex-row gap-12 items-center">
+          <div className="flex flex-col md:flex-row gap-12 items-end">
             <motion.div 
               initial={{ opacity: 0, x: -40 }} 
               whileInView={{ opacity: 1, x: 0 }} 
               viewport={{ once: true }}
-              className="w-full md:w-2/3 space-y-4"
+              className="w-full md:w-2/3 space-y-4 pb-0"
             >
               <Accordion type="single" collapsible className="w-full space-y-4">
                 <AccordionItem value="item-1" className="bg-white/95 backdrop-blur-sm rounded-xl px-6 border-none shadow-md data-[state=open]:shadow-lg transition-all">
@@ -464,9 +464,9 @@ export default function Home() {
               initial={{ opacity: 0, x: 40 }} 
               whileInView={{ opacity: 1, x: 0 }} 
               viewport={{ once: true }}
-              className="w-full md:w-1/3 flex justify-center"
+              className="w-full md:w-1/3 flex justify-center items-end self-stretch"
             >
-              <img src={agentImg} alt="Real Estate Agent" className="max-w-[280px] drop-shadow-2xl" />
+              <img src={agentImg} alt="Ivo IAFÉ IMOBI" className="w-full max-w-xs object-contain object-bottom drop-shadow-2xl" style={{ maxHeight: "380px" }} />
             </motion.div>
           </div>
         </div>
