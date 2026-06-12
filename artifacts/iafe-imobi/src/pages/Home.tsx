@@ -18,7 +18,7 @@ import beneficiosImg from "@assets/imagem-5-site-IMOBIV1_1781273933278.png";
 import aiRobotImg from "@assets/imagem-8-site-IMOBIV2_1781274455835.png";
 import funnelImg from "@assets/imagem-9-site-IMOBIV2_1781274490524.png";
 import globeImg from "@assets/imagem-10-site-IMOBIV2_1781274498262.png";
-import agentImg from "@/assets/agent.png";
+import agentImg from "@/assets/ivo-celular-nobg.png";
 
 export default function Home() {
   const { toast } = useToast();
