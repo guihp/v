@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "IAFE IMOBI"
+version = "1.0.0"
+id = "artifacts/iafe-imobi"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24283
+
+[services.development]
+run = "pnpm --filter @workspace/iafe-imobi run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/iafe-imobi", "run", "build" ]
+publicDir = "artifacts/iafe-imobi/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24283"
+BASE_PATH = "/"

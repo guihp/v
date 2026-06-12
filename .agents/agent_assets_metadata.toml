@@ -1,0 +1,32 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "8I-HcWdcrh8Jf3dq6nfRc"
+uri = "file://artifacts/iafe-imobi/src/assets/broker.png"
+type = "image"
+title = "Stressed broker looking at phone"
+
+[[generated]]
+id = "Upo0CwYQEuAm4Fom7ubhx"
+uri = "file://artifacts/iafe-imobi/src/assets/ai-robot.png"
+type = "image"
+title = "3D glowing green AI robot head"
+
+[[generated]]
+id = "B-Y-6t-7JUaaqccdBoeby"
+uri = "file://artifacts/iafe-imobi/src/assets/funnel.png"
+type = "image"
+title = "3D green funnel with coins"
+
+[[generated]]
+id = "N3jwAI7X4r3cfdTHHubIC"
+uri = "file://artifacts/iafe-imobi/src/assets/globe.png"
+type = "image"
+title = "3D green globe with connection nodes"
+
+[[generated]]
+id = "G1TpFJulxQlVs_Li2O0ht"
+uri = "file://artifacts/iafe-imobi/src/assets/agent.png"
+type = "image"
+title = "3D young male real estate agent"
