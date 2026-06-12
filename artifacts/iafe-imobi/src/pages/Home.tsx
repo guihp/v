@@ -12,9 +12,9 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { useToast } from "@/hooks/use-toast";
 
 // Generated image imports
-import brokerImg from "@/assets/broker.png";
 import homemImg from "@assets/imagem-2-site-IMOBI_1781273319450.png";
 import chatImg from "@assets/imagem-3-site-IMOBI_1781273352262.png";
+import beneficiosImg from "@assets/imagem-5-site-IMOBIV1_1781273933278.png";
 import aiRobotImg from "@/assets/ai-robot.png";
 import funnelImg from "@/assets/funnel.png";
 import globeImg from "@/assets/globe.png";
@@ -142,36 +142,51 @@ export default function Home() {
 
       {/* 5. PROBLEM/SOLUTION */}
       <section className="bg-gray-50 py-24">
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col gap-6"
-          >
-            <div className="rounded-2xl overflow-hidden shadow-lg h-[300px]">
-              <img src={brokerImg} alt="Stressed Broker" className="w-full h-full object-cover" />
-            </div>
-            <h3 className="text-3xl font-extrabold text-[#22C55E]">O problema real.</h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Leads chegam todos os dias, mas o desafio está em responder rapidamente antes dos concorrentes. Mensagens perdidas, corretores sobrecarregados e falta de controle aumentam o desperdício de vendas.
-            </p>
-          </motion.div>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex flex-col gap-4"
+            >
+              <h3 className="text-3xl font-extrabold text-[#22C55E]">O problema real.</h3>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Leads chegam todos os dias, mas o desafio está em responder rapidamente antes dos concorrentes. Mensagens perdidas, corretores sobrecarregados e falta de controle aumentam o desperdício de vendas.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="flex flex-col gap-4"
+            >
+              <h3 className="text-3xl font-extrabold text-[#22C55E]">A virada de IA.</h3>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                IAFÉ IMOBI inicia atendimentos via IA, conversa com leads em tempo real, faz perguntas estratégicas, organiza o funil e prepara o cliente para fechar. Enquanto você opera, a IA já está vendendo.
+              </p>
+            </motion.div>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="flex flex-col gap-6"
+            className="flex flex-col items-center gap-10"
           >
-            <div className="h-[300px] flex items-center justify-center">
-              <WhatsappMockup />
+            <img
+              src={beneficiosImg}
+              alt="Benefícios práticos IAFÉ IMOBI"
+              className="w-full max-w-3xl object-contain rounded-2xl"
+            />
+            <div className="text-center max-w-2xl">
+              <h3 className="text-3xl font-extrabold text-[#22C55E] mb-4">Benefícios práticos.</h3>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Centralize WhatsApp e conversas, torne sua equipe rápida e organizada e acompanhe tudo em um funil visual: mais vendas, menos esforço.
+              </p>
             </div>
-            <h3 className="text-3xl font-extrabold text-[#22C55E]">A virada de IA.</h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              IAFÉ IMOBI inicia atendimentos via IA, conversa com leads em tempo real, faz perguntas estratégicas, organiza o funil e prepara o cliente para fechar. Enquanto você opera, a IA já está vendendo.
-            </p>
           </motion.div>
         </div>
       </section>
