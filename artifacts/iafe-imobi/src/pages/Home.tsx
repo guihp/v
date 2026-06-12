@@ -13,6 +13,8 @@ import { useToast } from "@/hooks/use-toast";
 
 // Generated image imports
 import brokerImg from "@/assets/broker.png";
+import homemImg from "@assets/imagem-2-site-IMOBI_1781273319450.png";
+import chatImg from "@assets/imagem-3-site-IMOBI_1781273352262.png";
 import aiRobotImg from "@/assets/ai-robot.png";
 import funnelImg from "@/assets/funnel.png";
 import globeImg from "@/assets/globe.png";
@@ -107,40 +109,33 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative h-[400px] flex items-center justify-center bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden"
+            className="flex items-center justify-center"
           >
-            {/* Abstract silhouette & notifications */}
-            <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-transparent"></div>
-            <div className="w-48 h-64 bg-gray-200 rounded-t-full rounded-b-2xl shadow-inner relative z-10 opacity-80"></div>
-            
-            <div className="absolute top-20 right-10 bg-white p-3 rounded-lg shadow-lg border-l-4 border-[#22C55E] z-20 flex items-center gap-3 animate-bounce" style={{ animationDuration: '3s' }}>
-              <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
-                <span className="text-green-600 font-bold">1</span>
-              </div>
-              <span className="font-semibold text-sm">Lead Disponível</span>
-            </div>
-
-            <div className="absolute bottom-20 left-10 bg-white p-3 rounded-lg shadow-lg border-l-4 border-[#22C55E] z-20 flex items-center gap-3 animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}>
-              <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
-                <span className="text-green-600 font-bold">1</span>
-              </div>
-              <span className="font-semibold text-sm">Visita Agendada</span>
-            </div>
-            
-            <Search className="absolute w-12 h-12 text-gray-300 z-10 bottom-10 right-20" />
+            <img
+              src={homemImg}
+              alt="Corretor recebendo leads no celular"
+              className="w-full max-w-md object-contain rounded-2xl"
+              data-testid="img-homem-leads"
+            />
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            className="flex items-center justify-center"
           >
-            <WhatsappMockup />
+            <img
+              src={chatImg}
+              alt="Conversa de IA com cliente no WhatsApp"
+              className="w-full max-w-md object-contain rounded-2xl"
+              data-testid="img-chat-ia"
+            />
           </motion.div>
         </div>
       </section>
