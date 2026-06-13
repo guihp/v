@@ -487,7 +487,7 @@ export default function Home() {
                     Como funciona a IA do IAFÉ IMOBI?
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-600 text-base pb-5">
-                    Nossa IA conversa com seus leads 24h por dia pelo WhatsApp e portais, qualificando automaticamente e agendando visitas sem intervenção humana.
+                    A IA inicia o atendimento automaticamente, qualifica leads, agenda visitas e integra com WhatsApp.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2" className="bg-white/95 backdrop-blur-sm rounded-xl px-6 border-none shadow-md data-[state=open]:shadow-lg transition-all">
@@ -495,7 +495,7 @@ export default function Home() {
                     É possível integrar com portais imobiliários?
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-600 text-base pb-5">
-                    Sim! Integramos com os principais portais como ZAP, VivaReal, OLX e outros, capturando leads automaticamente.
+                    Sim, oferecemos integração nativa com os principais portais do mercado.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3" className="bg-white/95 backdrop-blur-sm rounded-xl px-6 border-none shadow-md data-[state=open]:shadow-lg transition-all">
@@ -503,7 +503,7 @@ export default function Home() {
                     Meu time precisa de treinamento?
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-600 text-base pb-5">
-                    O sistema é intuitivo e oferecemos onboarding completo. Em menos de 1 dia sua equipe estará operando com confiança.
+                    Não, a plataforma é simples, intuitiva e o onboarding é rápido.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
