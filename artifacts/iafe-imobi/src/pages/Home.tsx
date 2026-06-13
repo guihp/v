@@ -50,7 +50,7 @@ export default function Home() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <a href="#contato" className="hidden md:block">
+            <a href="#planos" className="hidden md:block">
               <Button className="bg-[#22C55E] hover:bg-green-600 text-white rounded-lg font-bold shadow-md hover:scale-105 transition-transform duration-200">
                 Agendar demonstração
               </Button>
@@ -71,7 +71,7 @@ export default function Home() {
             <a href="#solucoes" onClick={() => setMenuOpen(false)} className="text-base font-semibold text-gray-700 hover:text-green-500 py-3 border-b border-gray-50 transition-colors">Soluções</a>
             <a href="#planos" onClick={() => setMenuOpen(false)} className="text-base font-semibold text-gray-700 hover:text-green-500 py-3 border-b border-gray-50 transition-colors">Planos</a>
             <a href="#contato" onClick={() => setMenuOpen(false)} className="text-base font-semibold text-gray-700 hover:text-green-500 py-3 border-b border-gray-50 transition-colors">Contato</a>
-            <a href="#contato" onClick={() => setMenuOpen(false)} className="mt-3">
+            <a href="#planos" onClick={() => setMenuOpen(false)} className="mt-3">
               <Button className="w-full bg-[#22C55E] hover:bg-green-600 text-white rounded-lg font-bold">
                 Agendar demonstração
               </Button>
@@ -93,7 +93,7 @@ export default function Home() {
           <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-gray-900 mb-8">
             Soluções conectadas e inteligentes para vender mais.
           </h2>
-          <a href="#contato">
+          <a href="#planos">
             <Button className="bg-[#22C55E] hover:bg-green-600 text-white px-10 py-7 text-lg rounded-lg font-bold shadow-xl hover:scale-105 transition-transform duration-200">
               Agendar demonstração
             </Button>
@@ -361,7 +361,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <a href="#contato" className="block w-full">
+              <a href="https://wa.me/5519991570231?text=Olá,%20vim%20pelo%20site%20da%20IAFE%20IMOBI%20e%20tenho%20interesse%20no%20plano%20Start%20Imobi%20de%20R$%20749,00/mês.%20Gostaria%20de%20mais%20informações%20para%20contratação." target="_blank" rel="noopener noreferrer" className="block w-full">
                 <Button variant="outline" className="w-full border-2 border-[#22C55E] text-[#22C55E] hover:bg-green-50 rounded-lg py-6 font-bold text-lg hover:scale-105 transition-transform">
                   Começar agora
                 </Button>
@@ -385,7 +385,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <a href="#contato" className="block w-full">
+              <a href="https://wa.me/5519991570231?text=Olá,%20vim%20pelo%20site%20da%20IAFE%20IMOBI%20e%20tenho%20interesse%20no%20plano%20Imobi%20Scale%20de%20R$%201.999,00/mês.%20Gostaria%20de%20mais%20informações%20para%20contratação." target="_blank" rel="noopener noreferrer" className="block w-full">
                 <Button className="w-full bg-white text-[#22C55E] hover:bg-gray-100 rounded-lg py-6 font-bold text-lg shadow-lg hover:scale-105 transition-transform">
                   Começar agora
                 </Button>
@@ -408,7 +408,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <a href="#contato" className="block w-full">
+              <a href="https://wa.me/5519991570231?text=Olá,%20vim%20pelo%20site%20da%20IAFE%20IMOBI%20e%20tenho%20interesse%20no%20plano%20Imobi%20Authority%20de%20R$%202.499,00/mês.%20Gostaria%20de%20agendar%20uma%20demonstração%20e%20entender%20melhor%20a%20solução." target="_blank" rel="noopener noreferrer" className="block w-full">
                 <Button className="w-full bg-[#22C55E] text-white hover:bg-green-600 rounded-lg py-6 font-bold text-lg shadow-md hover:scale-105 transition-transform">
                   Agendar demonstração
                 </Button>
