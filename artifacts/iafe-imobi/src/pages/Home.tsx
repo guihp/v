@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Zap, Clock, Search, TrendingUp, Check } from "lucide-react";
+import { Zap, Clock, Search, TrendingUp, Check, Menu, X } from "lucide-react";
 import { IafeLogo } from "@/components/IafeLogo";
 import { PlatformMockup } from "@/components/PlatformMockup";
 import { WhatsappMockup } from "@/components/WhatsappMockup";
@@ -23,6 +23,7 @@ import agentImg from "@/assets/ivo-celular-nobg.png";
 export default function Home() {
   const { toast } = useToast();
   const [formData, setFormData] = useState({ nome: "", whatsapp: "", mensagem: "" });
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,39 +35,62 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-green-200">
+    <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-green-200 overflow-x-hidden">
       {/* 1. NAVBAR */}
       <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
-        <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+        <div className="container mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
           <Link href="/">
             <IafeLogo />
           </Link>
-          
+
           <nav className="hidden md:flex items-center gap-8">
             <a href="#solucoes" className="text-sm font-semibold text-gray-600 hover:text-green-500 transition-colors">Soluções</a>
             <a href="#planos" className="text-sm font-semibold text-gray-600 hover:text-green-500 transition-colors">Planos</a>
             <a href="#contato" className="text-sm font-semibold text-gray-600 hover:text-green-500 transition-colors">Contato</a>
           </nav>
 
-          <a href="#contato">
-            <Button className="bg-[#22C55E] hover:bg-green-600 text-white rounded-lg font-bold shadow-md hover:scale-105 transition-transform duration-200">
-              Agendar demonstração
-            </Button>
-          </a>
+          <div className="flex items-center gap-3">
+            <a href="#contato" className="hidden md:block">
+              <Button className="bg-[#22C55E] hover:bg-green-600 text-white rounded-lg font-bold shadow-md hover:scale-105 transition-transform duration-200">
+                Agendar demonstração
+              </Button>
+            </a>
+            <button
+              className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Menu"
+            >
+              {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile dropdown */}
+        {menuOpen && (
+          <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-1 shadow-lg">
+            <a href="#solucoes" onClick={() => setMenuOpen(false)} className="text-base font-semibold text-gray-700 hover:text-green-500 py-3 border-b border-gray-50 transition-colors">Soluções</a>
+            <a href="#planos" onClick={() => setMenuOpen(false)} className="text-base font-semibold text-gray-700 hover:text-green-500 py-3 border-b border-gray-50 transition-colors">Planos</a>
+            <a href="#contato" onClick={() => setMenuOpen(false)} className="text-base font-semibold text-gray-700 hover:text-green-500 py-3 border-b border-gray-50 transition-colors">Contato</a>
+            <a href="#contato" onClick={() => setMenuOpen(false)} className="mt-3">
+              <Button className="w-full bg-[#22C55E] hover:bg-green-600 text-white rounded-lg font-bold">
+                Agendar demonstração
+              </Button>
+            </a>
+          </div>
+        )}
       </header>
 
       {/* 2. HERO SECTION */}
-      <section className="pt-16 pb-0 px-6 max-w-5xl mx-auto text-center">
+      <section className="pt-12 pb-0 px-4 sm:px-6 max-w-5xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-5xl md:text-6xl font-extrabold text-[#22C55E] tracking-tight leading-tight mb-4">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-[#22C55E] tracking-tight leading-tight mb-4">
             O CRM imobiliário que está elevando o nível do mercado.
           </h1>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10">
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-gray-900 mb-8">
             Soluções conectadas e inteligentes para vender mais.
           </h2>
           <a href="#contato">
@@ -87,14 +111,14 @@ export default function Home() {
       </section>
 
       {/* 3. GREEN BANNER */}
-      <section className="bg-[#22C55E] py-14 text-white text-center px-6">
+      <section className="bg-[#22C55E] py-12 text-white text-center px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
         >
-          <p className="text-2xl md:text-3xl font-bold mb-2">Sozinho você trabalha.</p>
-          <p className="text-2xl md:text-3xl font-bold">Com a IAFÉ IMOBI, seu negócio trabalha por você.</p>
+          <p className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">Sozinho você trabalha.</p>
+          <p className="text-xl sm:text-2xl md:text-3xl font-bold">Com a IAFÉ IMOBI, seu negócio trabalha por você.</p>
         </motion.div>
       </section>
 
@@ -286,28 +310,28 @@ export default function Home() {
       </section>
 
       {/* 9. STATS BANNER */}
-      <section className="py-14 px-6 max-w-6xl mx-auto">
+      <section className="py-14 px-4 sm:px-6 max-w-6xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-[#16A34A] rounded-3xl p-12 text-white shadow-2xl flex flex-col md:flex-row items-center justify-around gap-10"
+          className="bg-[#16A34A] rounded-3xl p-8 sm:p-12 text-white shadow-2xl flex flex-col md:flex-row items-center justify-around gap-8"
         >
           <div className="text-center">
-            <div className="text-6xl md:text-7xl font-black mb-2">10x</div>
-            <div className="text-lg font-medium text-green-100">Respostas rápidas</div>
+            <div className="text-5xl sm:text-6xl md:text-7xl font-black mb-2">10x</div>
+            <div className="text-base sm:text-lg font-medium text-green-100">Respostas rápidas</div>
           </div>
           <div className="hidden md:block w-px h-24 bg-green-400"></div>
-          <div className="w-full h-px md:hidden bg-green-400"></div>
+          <div className="w-16 h-px md:hidden bg-green-400"></div>
           <div className="text-center">
-            <div className="text-6xl md:text-7xl font-black mb-2">30%</div>
-            <div className="text-lg font-medium text-green-100">Aumento em vendas</div>
+            <div className="text-5xl sm:text-6xl md:text-7xl font-black mb-2">30%</div>
+            <div className="text-base sm:text-lg font-medium text-green-100">Aumento em vendas</div>
           </div>
           <div className="hidden md:block w-px h-24 bg-green-400"></div>
-          <div className="w-full h-px md:hidden bg-green-400"></div>
+          <div className="w-16 h-px md:hidden bg-green-400"></div>
           <div className="text-center">
-            <div className="text-6xl md:text-7xl font-black mb-2">24/7</div>
-            <div className="text-lg font-medium text-green-100">Atendimento IA</div>
+            <div className="text-5xl sm:text-6xl md:text-7xl font-black mb-2">24/7</div>
+            <div className="text-base sm:text-lg font-medium text-green-100">Atendimento IA</div>
           </div>
         </motion.div>
       </section>
@@ -419,7 +443,7 @@ export default function Home() {
       </section>
 
       {/* 12. FAQ SECTION */}
-      <section className="py-16 px-6 bg-gradient-to-br from-green-400 to-green-600 overflow-hidden">
+      <section id="faq" className="py-16 px-4 sm:px-6 bg-gradient-to-br from-green-400 to-green-600 overflow-hidden">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center mb-10">
             Perguntas frequentes
@@ -531,43 +555,43 @@ export default function Home() {
       </section>
 
       {/* 14. FOOTER */}
-      <footer className="bg-white border-t border-gray-100 py-16 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10">
-          <div className="md:col-span-4">
+      <footer className="bg-white border-t border-gray-100 py-12 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-12 gap-8">
+          <div className="col-span-2 md:col-span-4">
             <IafeLogo />
             <p className="mt-4 text-gray-500 text-sm max-w-xs">
               O CRM imobiliário que está elevando o nível do mercado com IA e automação inteligente.
             </p>
           </div>
-          
-          <div className="md:col-span-2">
+
+          <div className="col-span-1 md:col-span-2">
             <h4 className="font-bold text-gray-900 mb-4">IAFÉ IMOBI</h4>
             <ul className="space-y-3">
               <li><a href="#solucoes" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Soluções</a></li>
               <li><a href="#planos" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Planos</a></li>
-              <li><a href="#" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Instagram</a></li>
-            </ul>
-          </div>
-          
-          <div className="md:col-span-2">
-            <h4 className="font-bold text-gray-900 mb-4">CRM</h4>
-            <ul className="space-y-3">
-              <li><a href="#" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Funil de vendas</a></li>
-              <li><a href="#" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">IA Imobiliária</a></li>
-              <li><a href="#" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Central de Comunicação</a></li>
-            </ul>
-          </div>
-          
-          <div className="md:col-span-2">
-            <h4 className="font-bold text-gray-900 mb-4">Ajuda</h4>
-            <ul className="space-y-3">
-              <li><a href="#" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">FAQ</a></li>
-              <li><a href="#" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Suporte</a></li>
               <li><a href="#contato" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Contato</a></li>
             </ul>
           </div>
-          
-          <div className="md:col-span-2">
+
+          <div className="col-span-1 md:col-span-2">
+            <h4 className="font-bold text-gray-900 mb-4">CRM</h4>
+            <ul className="space-y-3">
+              <li><a href="#solucoes" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Funil de vendas</a></li>
+              <li><a href="#solucoes" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">IA Imobiliária</a></li>
+              <li><a href="#solucoes" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Comunicação</a></li>
+            </ul>
+          </div>
+
+          <div className="col-span-1 md:col-span-2">
+            <h4 className="font-bold text-gray-900 mb-4">Ajuda</h4>
+            <ul className="space-y-3">
+              <li><a href="#faq" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">FAQ</a></li>
+              <li><a href="#contato" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Suporte</a></li>
+              <li><a href="#contato" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Contato</a></li>
+            </ul>
+          </div>
+
+          <div className="col-span-1 md:col-span-2">
             <h4 className="font-bold text-gray-900 mb-4">Legal</h4>
             <ul className="space-y-3">
               <li><a href="#" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Termos de uso</a></li>
@@ -575,8 +599,8 @@ export default function Home() {
             </ul>
           </div>
         </div>
-        
-        <div className="max-w-6xl mx-auto mt-16 pt-8 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between">
+
+        <div className="max-w-6xl mx-auto mt-10 pt-8 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between">
           <p className="text-gray-400 text-sm font-medium">2026 © IAFÉ IMOBI</p>
         </div>
       </footer>
