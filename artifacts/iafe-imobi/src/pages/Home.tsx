@@ -466,7 +466,7 @@ export default function Home() {
       </section>
 
       {/* 12. FAQ SECTION */}
-      <section id="faq" className="py-16 px-4 sm:px-6 bg-gradient-to-br from-green-400 to-green-600 overflow-hidden">
+      <section id="faq" className="pt-16 px-4 sm:px-6 bg-gradient-to-br from-green-400 to-green-600">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white text-center mb-10">
             Perguntas frequentes
@@ -477,7 +477,7 @@ export default function Home() {
               initial={{ opacity: 0, x: -40 }} 
               whileInView={{ opacity: 1, x: 0 }} 
               viewport={{ once: true }}
-              className="w-full md:w-2/3 space-y-4 pb-0"
+              className="w-full md:w-2/3 space-y-4 pb-16"
             >
               <Accordion type="single" collapsible className="w-full space-y-4">
                 <AccordionItem value="item-1" className="bg-white/95 backdrop-blur-sm rounded-xl px-6 border-none shadow-md data-[state=open]:shadow-lg transition-all">
@@ -511,9 +511,13 @@ export default function Home() {
               initial={{ opacity: 0, x: 40 }} 
               whileInView={{ opacity: 1, x: 0 }} 
               viewport={{ once: true }}
-              className="w-full md:w-1/3 flex justify-center items-end self-stretch"
+              className="hidden md:flex w-full md:w-1/3 justify-center items-end"
             >
-              <img src={agentImg} alt="Ivo IAFÉ IMOBI" className="w-full max-w-xs object-contain object-bottom drop-shadow-2xl" style={{ maxHeight: "380px" }} />
+              <img
+                src={agentImg}
+                alt="Ivo IAFÉ IMOBI"
+                className="w-full max-w-sm object-contain object-bottom drop-shadow-2xl"
+              />
             </motion.div>
           </div>
         </div>
