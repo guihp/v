@@ -363,7 +363,9 @@ export default function Home() {
       <section id="planos" className="py-16 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10 flex flex-col items-center">
-            <h2 className="text-4xl font-extrabold text-gray-900 mb-4">Planos</h2>
+            <h2 className="text-4xl font-extrabold text-gray-900 mb-3">Planos</h2>
+            <p className="text-xl md:text-2xl font-bold text-[#22C55E]">Sua operação pronta para vender mais começa aqui.</p>
+            <p className="text-xl md:text-2xl font-bold text-gray-900 mt-1 mb-4">Escolha seu plano e ative sua máquina de vendas agora.</p>
             <div className="w-16 h-1.5 bg-[#22C55E] rounded-full"></div>
           </div>
 
@@ -592,7 +594,7 @@ export default function Home() {
           </div>
 
           <div className="col-span-1 md:col-span-2">
-            <h4 className="font-bold text-gray-900 mb-4">IAFÉ IMOBI</h4>
+            <h4 className="font-bold text-[#22C55E] mb-4">IAFÉ IMOBI</h4>
             <ul className="space-y-3">
               <li><a href="#solucoes" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Soluções</a></li>
               <li><a href="#planos" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Planos</a></li>
@@ -601,7 +603,7 @@ export default function Home() {
           </div>
 
           <div className="col-span-1 md:col-span-2">
-            <h4 className="font-bold text-gray-900 mb-4">CRM</h4>
+            <h4 className="font-bold text-[#22C55E] mb-4">CRM</h4>
             <ul className="space-y-3">
               <li><a href="#solucoes" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Funil de vendas</a></li>
               <li><a href="#solucoes" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">IA Imobiliária</a></li>
@@ -610,7 +612,7 @@ export default function Home() {
           </div>
 
           <div className="col-span-1 md:col-span-2">
-            <h4 className="font-bold text-gray-900 mb-4">Ajuda</h4>
+            <h4 className="font-bold text-[#22C55E] mb-4">Ajuda</h4>
             <ul className="space-y-3">
               <li><a href="#faq" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">FAQ</a></li>
               <li><a href="#contato" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Suporte</a></li>
@@ -619,7 +621,7 @@ export default function Home() {
           </div>
 
           <div className="col-span-1 md:col-span-2">
-            <h4 className="font-bold text-gray-900 mb-4">Legal</h4>
+            <h4 className="font-bold text-[#22C55E] mb-4">Legal</h4>
             <ul className="space-y-3">
               <li><a href="#" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Termos de uso</a></li>
               <li><a href="#" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Política de privacidade</a></li>
