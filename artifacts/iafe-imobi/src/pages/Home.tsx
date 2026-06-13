@@ -20,18 +20,41 @@ import funnelImg from "@assets/imagem-9-site-IMOBIV2_1781274490524.png";
 import globeImg from "@assets/imagem-10-site-IMOBIV2_1781274498262.png";
 import agentImg from "@/assets/ivo-celular-nobg.png";
 
+const WEBHOOK_URL = "https://n8n-sgo8ksokg404ocg8sgc4sooc.vemprajogo.com/webhook/enviathay";
+
 export default function Home() {
   const { toast } = useToast();
   const [formData, setFormData] = useState({ nome: "", whatsapp: "", mensagem: "" });
   const [menuOpen, setMenuOpen] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Mensagem enviada com sucesso!",
-      description: "Em breve entraremos em contato.",
-    });
-    setFormData({ nome: "", whatsapp: "", mensagem: "" });
+    setSubmitting(true);
+    try {
+      await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nome: formData.nome,
+          whatsapp: formData.whatsapp,
+          mensagem: formData.mensagem,
+        }),
+      });
+      toast({
+        title: "Mensagem enviada com sucesso!",
+        description: "Em breve entraremos em contato.",
+      });
+      setFormData({ nome: "", whatsapp: "", mensagem: "" });
+    } catch {
+      toast({
+        title: "Erro ao enviar mensagem",
+        description: "Tente novamente em instantes.",
+        variant: "destructive",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -547,8 +570,8 @@ export default function Home() {
               />
             </div>
             
-            <Button type="submit" className="w-full bg-[#22C55E] hover:bg-green-600 text-white h-14 rounded-lg font-bold text-lg hover:scale-[1.02] transition-transform">
-              Enviar
+            <Button type="submit" disabled={submitting} className="w-full bg-[#22C55E] hover:bg-green-600 text-white h-14 rounded-lg font-bold text-lg hover:scale-[1.02] transition-transform disabled:opacity-70 disabled:cursor-not-allowed">
+              {submitting ? "Enviando..." : "Enviar"}
             </Button>
           </form>
         </motion.div>
