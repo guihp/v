@@ -375,7 +375,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm"
+              className="bg-white border border-gray-200 rounded-2xl p-5 sm:p-8 shadow-sm"
             >
               <h3 className="text-xl font-bold text-gray-800 mb-2">Start Imobi</h3>
               <div className="text-3xl font-extrabold text-[#22C55E] mb-6">R$ 749,00 <span className="text-sm font-normal text-gray-500">/mês</span></div>
@@ -387,7 +387,7 @@ export default function Home() {
                 ))}
               </ul>
               <a href="https://wa.me/5519991570231?text=Olá,%20vim%20pelo%20site%20da%20IAFE%20IMOBI%20e%20tenho%20interesse%20no%20plano%20Start%20Imobi%20de%20R$%20749,00/mês.%20Gostaria%20de%20mais%20informações%20para%20contratação." target="_blank" rel="noopener noreferrer" className="block w-full">
-                <Button variant="outline" className="w-full border-2 border-[#22C55E] text-[#22C55E] hover:bg-green-50 rounded-lg py-6 font-bold text-lg hover:scale-105 transition-transform">
+                <Button variant="outline" className="w-full border-2 border-[#22C55E] text-[#22C55E] hover:bg-green-50 rounded-lg py-4 sm:py-6 font-bold text-base sm:text-lg hover:scale-105 transition-transform">
                   Começar agora
                 </Button>
               </a>
@@ -398,7 +398,7 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="bg-[#22C55E] text-white border border-green-500 rounded-2xl p-10 shadow-2xl relative z-10 md:scale-105"
+              className="bg-[#22C55E] text-white border border-green-500 rounded-2xl p-5 sm:p-10 shadow-2xl relative z-10 md:scale-105"
             >
               <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-900 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Mais popular</div>
               <h3 className="text-xl font-bold mb-2">Imobi Scale</h3>
@@ -411,7 +411,7 @@ export default function Home() {
                 ))}
               </ul>
               <a href="https://wa.me/5519991570231?text=Olá,%20vim%20pelo%20site%20da%20IAFE%20IMOBI%20e%20tenho%20interesse%20no%20plano%20Imobi%20Scale%20de%20R$%201.999,00/mês.%20Gostaria%20de%20mais%20informações%20para%20contratação." target="_blank" rel="noopener noreferrer" className="block w-full">
-                <Button className="w-full bg-white text-[#22C55E] hover:bg-gray-100 rounded-lg py-6 font-bold text-lg shadow-lg hover:scale-105 transition-transform">
+                <Button className="w-full bg-white text-[#22C55E] hover:bg-gray-100 rounded-lg py-4 sm:py-6 font-bold text-base sm:text-lg shadow-lg hover:scale-105 transition-transform">
                   Começar agora
                 </Button>
               </a>
@@ -422,7 +422,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm"
+              className="bg-white border border-gray-200 rounded-2xl p-5 sm:p-8 shadow-sm"
             >
               <h3 className="text-xl font-bold text-gray-800 mb-2">Imobi Authority</h3>
               <div className="text-3xl font-extrabold text-[#22C55E] mb-6">R$ 2.499,00 <span className="text-sm font-normal text-gray-500">/mês</span></div>
@@ -434,7 +434,7 @@ export default function Home() {
                 ))}
               </ul>
               <a href="https://wa.me/5519991570231?text=Olá,%20vim%20pelo%20site%20da%20IAFE%20IMOBI%20e%20tenho%20interesse%20no%20plano%20Imobi%20Authority%20de%20R$%202.499,00/mês.%20Gostaria%20de%20agendar%20uma%20demonstração%20e%20entender%20melhor%20a%20solução." target="_blank" rel="noopener noreferrer" className="block w-full">
-                <Button className="w-full bg-[#22C55E] text-white hover:bg-green-600 rounded-lg py-6 font-bold text-lg shadow-md hover:scale-105 transition-transform">
+                <Button className="w-full bg-[#22C55E] text-white hover:bg-green-600 rounded-lg py-4 sm:py-6 font-bold text-base sm:text-lg shadow-md hover:scale-105 transition-transform">
                   Agendar demonstração
                 </Button>
               </a>
