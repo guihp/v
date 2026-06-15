@@ -60,7 +60,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-green-200 overflow-x-hidden">
       {/* 1. NAVBAR */}
-      <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+      <header className="fixed left-0 right-0 top-0 md:sticky z-50 bg-white border-b border-gray-100 shadow-sm w-full">
         <div className="container mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
           <Link href="/">
             <IafeLogo />
@@ -102,6 +102,9 @@ export default function Home() {
           </div>
         )}
       </header>
+
+      {/* Spacer for fixed navbar on mobile only */}
+      <div className="h-16 sm:h-20 md:hidden" />
 
       {/* 2. HERO SECTION */}
       <section className="pt-12 pb-0 px-4 sm:px-6 max-w-5xl mx-auto text-center">
