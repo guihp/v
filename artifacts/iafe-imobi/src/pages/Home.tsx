@@ -62,11 +62,11 @@ export default function Home() {
       {/* 1. NAVBAR */}
       <header className="fixed left-0 right-0 top-0 md:sticky z-50 bg-white border-b border-gray-100 shadow-sm w-full">
         <div className="container mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
-          <Link href="/">
+          <Link href="/" aria-label="IAFÉ IMOBI — Página inicial">
             <IafeLogo />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8" aria-label="Navegação principal">
             <a href="#solucoes" className="text-sm font-semibold text-gray-600 hover:text-green-500 transition-colors">Soluções</a>
             <a href="#planos" className="text-sm font-semibold text-gray-600 hover:text-green-500 transition-colors">Planos</a>
             <a href="#contato" className="text-sm font-semibold text-gray-600 hover:text-green-500 transition-colors">Contato</a>
@@ -81,16 +81,18 @@ export default function Home() {
             <button
               className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
               onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="Menu"
+              aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-menu"
             >
-              {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {menuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
             </button>
           </div>
         </div>
 
         {/* Mobile dropdown */}
         {menuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-1 shadow-lg">
+          <nav id="mobile-menu" className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-1 shadow-lg" aria-label="Menu mobile">
             <a href="#solucoes" onClick={() => setMenuOpen(false)} className="text-base font-semibold text-gray-700 hover:text-green-500 py-3 border-b border-gray-50 transition-colors">Soluções</a>
             <a href="#planos" onClick={() => setMenuOpen(false)} className="text-base font-semibold text-gray-700 hover:text-green-500 py-3 border-b border-gray-50 transition-colors">Planos</a>
             <a href="#contato" onClick={() => setMenuOpen(false)} className="text-base font-semibold text-gray-700 hover:text-green-500 py-3 border-b border-gray-50 transition-colors">Contato</a>
@@ -99,21 +101,23 @@ export default function Home() {
                 Agendar demonstração
               </Button>
             </a>
-          </div>
+          </nav>
         )}
       </header>
 
       {/* Spacer for fixed navbar on mobile only */}
-      <div className="h-16 sm:h-20 md:hidden" />
+      <div className="h-16 sm:h-20 md:hidden" aria-hidden="true" />
+
+      <main id="main-content">
 
       {/* 2. HERO SECTION */}
-      <section className="pt-12 pb-0 px-4 sm:px-6 max-w-5xl mx-auto text-center">
+      <section className="pt-12 pb-0 px-4 sm:px-6 max-w-5xl mx-auto text-center" aria-labelledby="hero-heading">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-[#22C55E] tracking-tight leading-tight mb-4">
+          <h1 id="hero-heading" className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-[#22C55E] tracking-tight leading-tight mb-4">
             O CRM imobiliário que está elevando o nível do mercado.
           </h1>
           <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-gray-900 mb-8">
@@ -170,6 +174,8 @@ export default function Home() {
               src={homemImg}
               alt="Corretor recebendo leads no celular"
               className="w-full max-w-md object-contain rounded-2xl"
+              loading="lazy"
+              decoding="async"
               data-testid="img-homem-leads"
             />
           </motion.div>
@@ -184,6 +190,8 @@ export default function Home() {
               src={chatImg}
               alt="Conversa de IA com cliente no WhatsApp"
               className="w-full max-w-md object-contain rounded-2xl"
+              loading="lazy"
+              decoding="async"
               data-testid="img-chat-ia"
             />
           </motion.div>
@@ -230,6 +238,8 @@ export default function Home() {
               src={beneficiosImg}
               alt="Benefícios práticos IAFÉ IMOBI"
               className="w-full max-w-3xl object-contain rounded-2xl"
+              loading="lazy"
+              decoding="async"
             />
             <div className="text-center max-w-2xl">
               <h3 className="text-3xl font-extrabold text-[#22C55E] mb-4">Benefícios práticos.</h3>
@@ -263,7 +273,7 @@ export default function Home() {
             className="bg-white border border-gray-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
           >
             <div className="h-48 rounded-xl mb-6 overflow-hidden bg-gray-50 flex items-center justify-center">
-              <img src={aiRobotImg} alt="IA 24 horas" className="object-contain h-full" />
+              <img src={aiRobotImg} alt="IA 24 horas" className="object-contain h-full" loading="lazy" decoding="async" />
             </div>
             <h4 className="text-xl font-bold text-[#22C55E] mb-3">IA 24 horas.</h4>
             <p className="text-gray-700">
@@ -279,7 +289,7 @@ export default function Home() {
             className="bg-white border border-gray-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
           >
             <div className="h-48 rounded-xl mb-6 overflow-hidden bg-gray-50 flex items-center justify-center">
-              <img src={funnelImg} alt="Funil visual" className="object-contain h-full" />
+              <img src={funnelImg} alt="Funil visual" className="object-contain h-full" loading="lazy" decoding="async" />
             </div>
             <h4 className="text-xl font-bold text-[#22C55E] mb-3">Funil visual.</h4>
             <p className="text-gray-700">
@@ -295,7 +305,7 @@ export default function Home() {
             className="bg-white border border-gray-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
           >
             <div className="h-48 rounded-xl mb-6 overflow-hidden bg-gray-50 flex items-center justify-center">
-              <img src={globeImg} alt="Comunicação centralizada" className="object-contain h-full" />
+              <img src={globeImg} alt="Comunicação centralizada" className="object-contain h-full" loading="lazy" decoding="async" />
             </div>
             <h4 className="text-xl font-bold text-[#22C55E] mb-3">Comunicação centralizada.</h4>
             <p className="text-gray-700">
@@ -520,8 +530,10 @@ export default function Home() {
             >
               <img
                 src={agentImg}
-                alt="Ivo IAFÉ IMOBI"
+                alt="Ivo, assistente IAFÉ IMOBI"
                 className="w-full max-w-sm object-contain object-bottom drop-shadow-2xl"
+                loading="lazy"
+                decoding="async"
               />
             </motion.div>
           </div>
@@ -541,13 +553,16 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">Vendas, visitas e controle em um só lugar.</h2>
           </div>
 
-          <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 space-y-6">
+          <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 space-y-6" noValidate>
             <div className="space-y-2">
-              <label htmlFor="nome" className="text-sm font-bold text-gray-700">Nome</label>
+              <label htmlFor="nome" className="text-sm font-bold text-gray-700">Nome <span aria-hidden="true">*</span></label>
               <Input 
                 id="nome"
+                name="nome"
                 placeholder="Ivo Imobi" 
-                required 
+                required
+                aria-required="true"
+                autoComplete="name"
                 value={formData.nome}
                 onChange={e => setFormData({...formData, nome: e.target.value})}
                 className="h-12 border-gray-200 focus-visible:ring-[#22C55E]"
@@ -555,11 +570,15 @@ export default function Home() {
             </div>
             
             <div className="space-y-2">
-              <label htmlFor="whatsapp" className="text-sm font-bold text-gray-700">WhatsApp</label>
+              <label htmlFor="whatsapp" className="text-sm font-bold text-gray-700">WhatsApp <span aria-hidden="true">*</span></label>
               <Input 
                 id="whatsapp"
+                name="whatsapp"
+                type="tel"
                 placeholder="(98)9 9999-9999" 
-                required 
+                required
+                aria-required="true"
+                autoComplete="tel"
                 value={formData.whatsapp}
                 onChange={e => setFormData({...formData, whatsapp: e.target.value})}
                 className="h-12 border-gray-200 focus-visible:ring-[#22C55E]"
@@ -570,9 +589,10 @@ export default function Home() {
               <label htmlFor="mensagem" className="text-sm font-bold text-gray-700">Mensagem</label>
               <Textarea 
                 id="mensagem"
+                name="mensagem"
                 placeholder="Sua mensagem..." 
                 rows={4} 
-                required
+                autoComplete="off"
                 value={formData.mensagem}
                 onChange={e => setFormData({...formData, mensagem: e.target.value})}
                 className="resize-none border-gray-200 focus-visible:ring-[#22C55E]"
@@ -585,6 +605,8 @@ export default function Home() {
           </form>
         </motion.div>
       </section>
+
+      </main>
 
       {/* 14. FOOTER */}
       <footer className="bg-white border-t border-gray-100 py-12 px-4 sm:px-6">
