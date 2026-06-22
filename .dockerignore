@@ -1,0 +1,21 @@
+# Dependencies and build output
+**/node_modules
+**/.tsbuildinfo
+**/dist
+
+# Local / IDE
+.git
+.gitignore
+.local
+.cursor
+.vscode
+*.md
+.replit
+.replitignore
+
+# Other artifacts not needed for the landing page image
+artifacts/api-server
+artifacts/mockup-sandbox
+lib/db
+lib/api-zod
+scripts
