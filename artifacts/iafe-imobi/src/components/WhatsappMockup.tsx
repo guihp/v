@@ -1,14 +1,8 @@
-import { motion } from "framer-motion";
+import { Reveal } from "@/components/Reveal";
 
 export function WhatsappMockup() {
   return (
-    <motion.div 
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="bg-gray-100 rounded-xl overflow-hidden shadow-xl border border-gray-200"
-    >
+    <Reveal animation="scale" className="bg-gray-100 rounded-xl overflow-hidden shadow-xl border border-gray-200">
       <div className="bg-[#075E54] text-white p-4 flex items-center gap-3">
         <div className="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center overflow-hidden">
           <svg className="w-6 h-6 text-gray-500" fill="currentColor" viewBox="0 0 24 24"><path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
@@ -44,6 +38,6 @@ export function WhatsappMockup() {
           <div className="h-4"></div>
         </div>
       </div>
-    </motion.div>
+    </Reveal>
   );
 }
