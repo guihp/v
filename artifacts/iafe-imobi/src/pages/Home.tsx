@@ -18,6 +18,7 @@ import aiRobotImg from "@assets/imagem-8-site-IMOBIV2_1781274455835.webp";
 import funnelImg from "@assets/imagem-9-site-IMOBIV2_1781274490524.webp";
 import globeImg from "@assets/imagem-10-site-IMOBIV2_1781274498262.webp";
 import agentImg from "@/assets/ivo-celular-nobg.webp";
+import { LegalModal } from "@/components/LegalModal";
 
 const WEBHOOK_URL = "https://n8n-sgo8ksokg404ocg8sgc4sooc.vemprajogo.com/webhook/enviathay";
 
@@ -26,6 +27,7 @@ export default function Home() {
   const [formData, setFormData] = useState({ nome: "", whatsapp: "", mensagem: "" });
   const [menuOpen, setMenuOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [modalType, setModalType] = useState<"termos" | "privacidade" | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -540,11 +542,26 @@ export default function Home() {
           </div>
 
           <div className="col-span-1 md:col-span-2">
-            <h4 className="font-bold text-[#22C55E] mb-4">Ajuda</h4>
+            <h4 className="font-bold text-[#22C55E] mb-4">Legal</h4>
             <ul className="space-y-3">
-              <li><a href="#faq" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">FAQ</a></li>
-              <li><a href="#contato" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Suporte</a></li>
-              <li><a href="#contato" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Contato</a></li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => setModalType("termos")}
+                  className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium cursor-pointer text-left"
+                >
+                  Termos de uso
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => setModalType("privacidade")}
+                  className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium cursor-pointer text-left"
+                >
+                  Política de privacidade
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -561,6 +578,7 @@ export default function Home() {
           <p className="text-gray-400 text-sm font-medium">2026 © IAFÉ IMOBI</p>
         </div>
       </footer>
+      <LegalModal type={modalType} onClose={() => setModalType(null)} />
     </div>
   );
 }
