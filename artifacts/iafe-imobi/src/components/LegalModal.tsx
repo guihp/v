@@ -21,9 +21,9 @@ export function LegalModal({ type, onClose }: LegalModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-sm"
-      onClick={onClose}
-    >
+  className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-sm"
+  onClick={onClose}
+>
       <div
         className="relative w-full max-w-3xl max-h-[85vh] bg-[#111827] text-gray-200 border border-gray-700/60 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
         onClick={(e) => e.stopPropagation()}
