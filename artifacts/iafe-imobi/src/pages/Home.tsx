@@ -513,7 +513,7 @@ export default function Home() {
 
       </main>
 
-      {/* 14. FOOTER */}
+     {/* 14. FOOTER */}
       <footer className="bg-white border-t border-gray-100 py-12 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-12 gap-8">
           <div className="col-span-2 md:col-span-4">
@@ -542,13 +542,25 @@ export default function Home() {
           </div>
 
           <div className="col-span-1 md:col-span-2">
+            <h4 className="font-bold text-[#22C55E] mb-4">Ajuda</h4>
+            <ul className="space-y-3">
+              <li><a href="#faq" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">FAQ</a></li>
+              <li><a href="#contato" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Suporte</a></li>
+              <li><a href="#contato" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Contato</a></li>
+            </ul>
+          </div>
+
+          <div className="col-span-1 md:col-span-2">
             <h4 className="font-bold text-[#22C55E] mb-4">Legal</h4>
             <ul className="space-y-3">
               <li>
                 <button
                   type="button"
-                  onClick={() => setModalType("termos")}
-                  className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium cursor-pointer text-left"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setModalType("termos");
+                  }}
+                  className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium cursor-pointer text-left block"
                 >
                   Termos de uso
                 </button>
@@ -556,20 +568,15 @@ export default function Home() {
               <li>
                 <button
                   type="button"
-                  onClick={() => setModalType("privacidade")}
-                  className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium cursor-pointer text-left"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setModalType("privacidade");
+                  }}
+                  className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium cursor-pointer text-left block"
                 >
                   Política de privacidade
                 </button>
               </li>
-            </ul>
-          </div>
-
-          <div className="col-span-1 md:col-span-2">
-            <h4 className="font-bold text-[#22C55E] mb-4">Legal</h4>
-            <ul className="space-y-3">
-              <li><a href="#" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Termos de uso</a></li>
-              <li><a href="#" className="text-gray-500 hover:text-[#22C55E] transition-colors text-sm font-medium">Política de privacidade</a></li>
             </ul>
           </div>
         </div>
